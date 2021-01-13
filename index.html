@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="startPage">
+        <p>Want to test your mettle? <br> Take the Coding Quiz and see how high you can score!</p>
+        <button onclick="hideStartPage(), showQuestionSelection(), setTime()" type="button" class="start"
+            class="btn btn-outline-primary">
+            Start the Quiz</button>
+
+    </section>
+    <section id="questionSelection">
+        <div class="question">
+            <div id="questionSelect"></div>
+
+        </div>
+        <button type="button" id="button1" class="btn btn-outline-primary">
+            <div id="aSelect">
+
+            </div>
+        </button>
+        <br>
+        <button type="button" id="button2" class="btn btn-outline-primary">
+            <div id="bSelect">
+
+            </div>
+        </button>
+        <br>
+        <button type="button" id="button3" class="btn btn-outline-primary">
+            <div id="cSelect">
+
+            </div>
+
+        </button>
+        <br>
+        <button type="button" id="button4" class="btn btn-outline-primary">
+            <div id="dSelect">
+            </div>
+        </button>
+        <div id="correctAnswer"></div>
+        <br>
+        <h1 class="time"></h1>
+        <div id="main"></div>
+    </section>
+    <section id="results">
+        <div class="container">
+            <div class="row">
+
+
+                <h1> Finished! </h1>
+            </div>
+            <div class="row">
+                <div id="gameScore"></div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for=""></label>
+                    <input type="email" class="form-control" name="" id="initials" aria-describedby="emailHelpId"
+                        placeholder="">
+                    <small id="emailHelpId" class="form-text text-muted">Enter your initials</small>
+                </div>
+            </div>
+            <div class="row">
+
+                <button onclick="hideResults()" type="button" id="submit" class="btn btn-outline-primary">
+                    Submit
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="highscores">
+        <div class="container">
+            <div class="row">
+                <h1> High Scores </h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div id="initialsSpan">
+                        <h2>Initials</h2>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div id="highscoresSpan">
+                        <h3>Score </h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <button type="button" id="clear" class="btn btn-outline-primary">
+                Clear Scores
+            </button>
+        </div>
+        <div class="row">
+            <a href="index.html">
+                <button type="button" id="retake" class="btn btn-outline-primary">
+                    Retake Quiz
+                </button>
+            </a>
+        </div>
+        </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
