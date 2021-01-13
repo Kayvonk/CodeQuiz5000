@@ -25,118 +25,119 @@ var questions = [
         correctAnswer: "c"
     },
     {
-        text: "Question2",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
+        text: "An ID is indicated by which of the following symbols?",
+        a: "%",
+        b: "#",
+        c: ".",
+        d: "none of the above",
+        correctAnswer: "b"
+    },
+    {
+        text: "The element selector ul is an abbreviation for which of the following?",
+        a: "unused listener",
+        b: "unfortunate layer",
+        c: "unusually loud",
+        d: "unordered list",
+        correctAnswer: "d"
+    },
+    {
+        text: "Which of the following can be used in CSS to designate a specific position?",
+        a: "position:absolute",
+        b: "position:location",
+        c: "absolute:position",
+        d: "location:abs",
         correctAnswer: "a"
     },
     {
-        text: "Question3",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
+        text: "An array is made by using which of the following symbols?",
+        a: "Parantheses",
+        b: "Curly brackets",
+        c: "Square brackets",
+        d: "Angle brackets",
+        correctAnswer: "c"
+    },
+    {
+        text: "Which tag is used to indicate a hyperlink in HTML?",
+        a: "<hl>",
+        b: "<a>",
+        c: "<hype>",
+        d: "<link>",
+        correctAnswer: "b"
+    },
+    {
+        text: "What could you use to round a number up in value?",
+        a: "Math.round",
+        b: "Math.up",
+        c: "Math.ceiling",
+        d: "Math.floor",
+        correctAnswer: "c"
+    },
+    {
+        text: "Which of the following is NOT an example of a commonly used HTML semantic element?",
+        a: "article",
+        b: "header",
+        c: "footer",
+        d: "area",
+        correctAnswer: "d"
+    },
+    {
+        text: "All of the following can be used to create a loop in Javascript except for:",
+        a: "for",
+        b: "for/in",
+        c: "while",
+        d: "circuit",
+        correctAnswer: "d"
+    },
+    {
+        text: "Which of these can be used to position elements on top of each other in CSS?",
+        a: "z-index",
+        b: "overlap",
+        c: "compile",
+        d: "float",
         correctAnswer: "a"
     },
     {
-        text: "Question4",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
+        text: "Which could be used to present a user with the ability to type a response?",
+        a: "alert",
+        b: "confirm",
+        c: "prompt",
+        d: "reply",
+        correctAnswer: "c"
+    },
+    {
+        text: "Which of these is used to display data in the browser's console?",
+        a: "console.log()",
+        b: "browser.log()",
+        c: "console.show()",
+        d: "data.log()",
         correctAnswer: "a"
     },
     {
-        text: "Question5",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
+        text: "Which would be used to indicate that two values were equal regardless of their type?",
+        a: "=",
+        b: "==",
+        c: "===",
+        d: "====",
+        correctAnswer: "c"
     },
     {
-        text: "Question6",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
+        text: "An array can be converted to lowercase by using which of the following?",
+        a: "makeLowercase",
+        b: "convertCase",
+        c: "changeCase",
+        d: "toLowercase",
+        correctAnswer: "d"
     },
     {
-        text: "Question7",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question8",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question9",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question10",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question11",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question12",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question13",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question14",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
-        correctAnswer: "a"
-    },
-    {
-        text: "Question15",
-        a: "a1",
-        b: "a2",
-        c: "a3",
-        d: "a4",
+        text: "Which would be used to style an element using Javascript?",
+        a: "setAttribute",
+        b: "setStyle",
+        c: "styleAttribute",
+        d: "changeStyle",
         correctAnswer: "a"
     }
 ]
+
 
 var myIndex = 0;
 function keepScore() {
@@ -147,7 +148,7 @@ keepScore()
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 
-var secondsLeft = questions.length * 2;
+var secondsLeft = questions.length * 10;
 
 function setTime() {
     var timerInterval = setInterval(function () {
