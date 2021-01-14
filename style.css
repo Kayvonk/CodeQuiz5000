@@ -1,39 +1,40 @@
 .question, p, h1{
-    margin-top: 2%;
-    text-align: center;
-    border: blueviolet;
-    font-size: x-large;
-    color: blue;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+  margin-top: 2%;
+  text-align: center;
+  border: blueviolet;
+  font-size: x-large;
+  color: blue;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 .start{
-    margin: 1% 0 1% 45% ;
-    color: black;
-    background-color: rgb(202, 178, 223);
-    border-color: blueviolet;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    }
+  margin: 1% 0 1% 45% ;
+  color: black;
+  background-color: rgb(202, 178, 223);
+  border-color: blueviolet;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
 
 #button1, #button2, #button3, #button4, .highScoreField{
-    margin: 1% 0 1% 25% ;
-    color: black;
-    background-color: rgb(202, 178, 223);
-    border-color: blueviolet;
-    border-radius: 8px;
-    transition-duration: 0.4s;
+  margin: 1% 0 1% 25% ;
+  color: black;
+  background-color: rgb(202, 178, 223);
+  border-color: blueviolet;
+  border-radius: 8px;
+  transition-duration: 0.4s;
 }   
 #correctAnswer{
-    margin: 1% 0 1% 25% ;
-    font-size: x-large;
-    color: blue;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 1% 0 1% 25% ;
+  font-size: x-large;
+  color: blue;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #gameScore{
-    font-size: x-large;
-    color: rgb(140, 0, 255);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: x-large;
+  color: rgb(140, 0, 255);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #button1:hover, #button2:hover, #button3:hover, #button4:hover, #clear:hover, #retake:hover{
@@ -41,54 +42,58 @@
   color: white;
 }
 
-.start:hover {
+.start:hover{
   background-color:rgb(202, 178, 223); 
   color: white;
-  }
+}
 
-.time {
+.time{
   background-color:rgb(158, 201, 202);
 }
 
-#initialsSpan { 
-
-left:0;
-    padding: 60%;
-    font-size: x-large;
-    color: black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#initialsSpan{ 
+  left:0;
+  padding: 60%;
+  font-size: x-large;
+  color: black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#highscoresSpan {
+#highscoresSpan{
   right:0;
-   padding: 60%;
-    font-size: x-large;
-    color:black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 60%;
+  font-size: x-large;
+  color:black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #clear{
   position: fixed;
   top: 80%;
- left: 5%;
- color: black;
-    background-color: rgb(202, 178, 223);
-    border-color: blueviolet;
-    border-radius: 8px;
-    transition-duration: 0.4s;
+  left: 5%;
+  color: black;
+  background-color: rgb(202, 178, 223);
+  border-color: blueviolet;
+  border-radius: 8px;
+  transition-duration: 0.4s;
 }
 
-#retake {
-   position: fixed;
-   top: 90%;
-    left: 5%;
-color: black;
-    background-color: rgb(202, 178, 223);
-    border-color: blueviolet;
-    border-radius: 8px;
-    transition-duration: 0.4s;
+#retake{
+  position: fixed;
+  top: 90%;
+  left: 5%;
+  color: black;
+  background-color: rgb(202, 178, 223);
+  border-color: blueviolet;
+  border-radius: 8px;
+  transition-duration: 0.4s;
 }
 
+h1{
+  border-bottom: solid;
+  border-width: 5px;
+  border-color: blueviolet;
+}
 h2, h3{
   font-size: 120%;
   text-decoration: underline;

@@ -6,7 +6,6 @@ var clearInitials = document.querySelector("#clear")
 var highscoresSpan = document.querySelector("#highscoresSpan")
 var initalsSpan = document.querySelector("#initialsSpan")
 
-
 function hideOnStart() {
     document.getElementById("questionSelection").style.display = "none";
     document.getElementById("results").style.display = "none";
@@ -15,6 +14,7 @@ function hideOnStart() {
 
 hideOnStart()
 
+//Questions array
 var questions = [
     {
         text: "A string is indicated by which of the following?",
@@ -138,13 +138,13 @@ var questions = [
     }
 ]
 
-
 var myIndex = 0;
 function keepScore() {
     document.getElementById("gameScore").textContent = "Score: " + score
 }
 keepScore()
 
+//Timer function
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 
@@ -165,10 +165,6 @@ function setTime() {
     }, 1000);
 }
 
-
-
-
-
 function displayQuestion(index) {
     document.getElementById("questionSelect").textContent = questions[index].text;
     document.getElementById("aSelect").textContent = questions[index].a;
@@ -179,19 +175,7 @@ function displayQuestion(index) {
 
 displayQuestion(myIndex)
 
-// function endQuiz() {
-//     if (myIndex > 14) {
-//         document.getElementById("questionSelection").style.display = "none";
-//         clearInterval(timerInterval);
-//         document.getElementById("results").style.display = "block";
-//         keepScore();
-//     }
-//     else {
-
-//     }
-// }
-
-
+//Answer button click functions
 document.getElementById("button1").onclick = function () {
     if (questions[myIndex].correctAnswer === "a") {
         document.getElementById("correctAnswer").textContent = "Correct";
@@ -205,7 +189,6 @@ document.getElementById("button1").onclick = function () {
 
     myIndex++
     displayQuestion(myIndex)
-
 }
 document.getElementById("button2").onclick = function () {
     if (questions[myIndex].correctAnswer === "b") {
@@ -244,6 +227,7 @@ document.getElementById("button4").onclick = function () {
     displayQuestion(myIndex)
 }
 
+//Show Hide functions
 function timeUp() {
     if (secondsLeft === 0) {
         document.getElementById("questionSelection").style.display = "none";
@@ -264,8 +248,7 @@ function showQuestionSelection() {
     }
 }
 
-
-
+//Local storage functions
 submitInitials.addEventListener("click", function () {
     var highscoreArray = JSON.parse(localStorage.getItem("highscore")) || []
     var initials = storeInitials.value
@@ -285,12 +268,8 @@ submitInitials.addEventListener("click", function () {
 
 })
 
-
 document.getElementById("clear").onclick = function () {
     localStorage.clear();
     document.getElementById("initialsSpan").style.display = "none";
     document.getElementById("highscoresSpan").style.display = "none";
 }
-
-
-//when last question is answered move to results page
