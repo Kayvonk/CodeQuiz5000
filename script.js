@@ -159,7 +159,7 @@ keepScore()
 
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
-var secondsLeft = questions.length * 10;
+var secondsLeft = questions.length * 9.375;
 
 function setTime() {
     var timerInterval = setInterval(function () {
