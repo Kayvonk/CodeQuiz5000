@@ -5,6 +5,7 @@ var submitInitials = document.querySelector("#submit");
 var clearInitials = document.querySelector("#clear")
 var highscoresSpan = document.querySelector("#highscoresSpan")
 var initalsSpan = document.querySelector("#initialsSpan")
+var startButton = document.querySelector("#start")
 
 function hideOnStart() {
     document.getElementById("questionSelection").style.display = "none";
@@ -14,7 +15,13 @@ function hideOnStart() {
 
 hideOnStart()
 
-//Questions array
+startButton.addEventListener("click", function () {
+    hideStartPage();
+    showQuestionSelection();
+    setTime();
+    displayQuestion(myIndex)
+})
+
 var questions = [
     {
         text: "A string is indicated by which of the following?",
@@ -135,8 +142,17 @@ var questions = [
         c: "styleAttribute",
         d: "changeStyle",
         correctAnswer: "a"
+    },
+    {
+        text: "Which would be used to style an element using Javascript?",
+        a: "setAttribute",
+        b: "setStyle",
+        c: "styleAttribute",
+        d: "changeStyle",
+        correctAnswer: "a"
     }
 ]
+
 
 var myIndex = 0;
 function keepScore() {
@@ -144,7 +160,6 @@ function keepScore() {
 }
 keepScore()
 
-//Timer function
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 
@@ -165,6 +180,10 @@ function setTime() {
     }, 1000);
 }
 
+
+
+
+
 function displayQuestion(index) {
     document.getElementById("questionSelect").textContent = questions[index].text;
     document.getElementById("aSelect").textContent = questions[index].a;
@@ -175,25 +194,37 @@ function displayQuestion(index) {
 
 displayQuestion(myIndex)
 
-//Answer button click functions
+
+
 document.getElementById("button1").onclick = function () {
-    if (questions[myIndex].correctAnswer === "a") {
+    if (myIndex === 15) {
+        document.getElementById("questionSelection").style.display = "none";
+
+    }
+    else if (questions[myIndex].correctAnswer === "a") {
         document.getElementById("correctAnswer").textContent = "Correct";
         score++;
+        myIndex++
+        displayQuestion(myIndex)
 
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
         secondsLeft -= 5;
+        myIndex++
+        displayQuestion(myIndex)
     }
 
-    myIndex++
-    displayQuestion(myIndex)
+
+
 }
 document.getElementById("button2").onclick = function () {
-    if (questions[myIndex].correctAnswer === "b") {
+    if (myIndex === 15) {
+        document.getElementById("questionSelection").style.display = "none";
+    }
+    else if (questions[myIndex].correctAnswer === "b") {
         document.getElementById("correctAnswer").textContent = "Correct";
-        score++
+        score++;
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
@@ -203,9 +234,12 @@ document.getElementById("button2").onclick = function () {
     displayQuestion(myIndex)
 }
 document.getElementById("button3").onclick = function () {
-    if (questions[myIndex].correctAnswer === "c") {
+    if (myIndex === 15) {
+        document.getElementById("questionSelection").style.display = "none";
+    }
+    else if (questions[myIndex].correctAnswer === "c") {
         document.getElementById("correctAnswer").textContent = "Correct";
-        score++
+        score++;
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
@@ -215,9 +249,12 @@ document.getElementById("button3").onclick = function () {
     displayQuestion(myIndex)
 }
 document.getElementById("button4").onclick = function () {
-    if (questions[myIndex].correctAnswer === "d") {
+    if (myIndex === 15) {
+        document.getElementById("questionSelection").style.display = "none";
+    }
+    else if (questions[myIndex].correctAnswer === "d") {
         document.getElementById("correctAnswer").textContent = "Correct";
-        score++
+        score++;
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
@@ -227,7 +264,6 @@ document.getElementById("button4").onclick = function () {
     displayQuestion(myIndex)
 }
 
-//Show Hide functions
 function timeUp() {
     if (secondsLeft === 0) {
         document.getElementById("questionSelection").style.display = "none";
@@ -248,25 +284,37 @@ function showQuestionSelection() {
     }
 }
 
-//Local storage functions
-submitInitials.addEventListener("click", function () {
-    var highscoreArray = JSON.parse(localStorage.getItem("highscore")) || []
-    var initials = storeInitials.value
-    var player = {
-        initials: initials,
-        score: score
-    }
-    highscoreArray.push(player)
-    localStorage.setItem("highscore", JSON.stringify(highscoreArray))
-    console.log(highscoreArray)
-    for (let i = 0; i < highscoreArray.length; i++) {
-        var writeScore = document.createElement("p").innerHTML = highscoreArray[i].score + " ";
-        var writeInitials = document.createElement("p").innerHTML = highscoreArray[i].initials + " ";
-        initialsSpan.append(writeInitials);
-        highscoresSpan.append(writeScore);
-    }
 
+
+submitInitials.addEventListener("click", function () {
+
+    var initials = storeInitials.value
+
+    if (storeInitials.value.length == "" || storeInitials.value.length > 3) {
+        alert("Please enter your initials \nLength limit: 1 to 3 characters");
+
+    }
+    else {
+        onclick = "hideResults()"
+        hideResults();
+        var highscoreArray = JSON.parse(localStorage.getItem("highscore")) || []
+        var player = {
+            initials: initials,
+            score: score
+        }
+        highscoreArray.push(player);
+        localStorage.setItem("highscore", JSON.stringify(highscoreArray));
+
+        for (let i = 0; i < highscoreArray.length; i++) {
+            var writeScore = document.createElement("p").innerHTML = highscoreArray[i].score + " ";
+            var writeInitials = document.createElement("p").innerHTML = highscoreArray[i].initials + " ";
+            initialsSpan.append(writeInitials);
+            highscoresSpan.append(writeScore);
+        }
+
+    }
 })
+
 
 document.getElementById("clear").onclick = function () {
     localStorage.clear();

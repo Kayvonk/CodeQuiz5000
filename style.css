@@ -16,7 +16,7 @@
   transition-duration: 0.4s;
 }
 
-#button1, #button2, #button3, #button4, .highScoreField{
+#button1, #button2, #button3, #button4{
   margin: 1% 0 1% 25% ;
   color: black;
   background-color: rgb(202, 178, 223);
@@ -24,6 +24,7 @@
   border-radius: 8px;
   transition-duration: 0.4s;
 }   
+
 #correctAnswer{
   margin: 1% 0 1% 25% ;
   font-size: x-large;
@@ -42,24 +43,25 @@
   color: white;
 }
 
-.start:hover{
+.start:hover {
   background-color:rgb(202, 178, 223); 
   color: white;
 }
 
-.time{
+.time {
   background-color:rgb(158, 201, 202);
 }
 
-#initialsSpan{ 
-  left:0;
+#initialsSpan { 
+
+left:0;
   padding: 60%;
   font-size: x-large;
   color: black;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#highscoresSpan{
+#highscoresSpan {
   right:0;
   padding: 60%;
   font-size: x-large;
@@ -78,7 +80,7 @@
   transition-duration: 0.4s;
 }
 
-#retake{
+#retake {
   position: fixed;
   top: 90%;
   left: 5%;
@@ -89,11 +91,6 @@
   transition-duration: 0.4s;
 }
 
-h1{
-  border-bottom: solid;
-  border-width: 5px;
-  border-color: blueviolet;
-}
 h2, h3{
   font-size: 120%;
   text-decoration: underline;
