@@ -1,5 +1,4 @@
 var score = 0
-
 var storeInitials = document.querySelector("#initials");
 var submitInitials = document.querySelector("#submit");
 var clearInitials = document.querySelector("#clear")
@@ -12,7 +11,6 @@ function hideOnStart() {
     document.getElementById("results").style.display = "none";
     document.getElementById("highscores").style.display = "none";
 }
-
 hideOnStart()
 
 startButton.addEventListener("click", function () {
@@ -149,10 +147,9 @@ var questions = [
         b: "setStyle",
         c: "styleAttribute",
         d: "changeStyle",
-        correctAnswer: "a"
+        correctAnswer: ""
     }
 ]
-
 
 var myIndex = 0;
 function keepScore() {
@@ -162,7 +159,6 @@ keepScore()
 
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
-
 var secondsLeft = questions.length * 10;
 
 function setTime() {
@@ -176,13 +172,8 @@ function setTime() {
             document.getElementById("results").style.display = "block";
             keepScore();
         }
-
     }, 1000);
 }
-
-
-
-
 
 function displayQuestion(index) {
     document.getElementById("questionSelect").textContent = questions[index].text;
@@ -191,22 +182,17 @@ function displayQuestion(index) {
     document.getElementById("cSelect").textContent = questions[index].c;
     document.getElementById("dSelect").textContent = questions[index].d;
 }
-
 displayQuestion(myIndex)
-
-
 
 document.getElementById("button1").onclick = function () {
     if (myIndex === 15) {
         document.getElementById("questionSelection").style.display = "none";
-
     }
     else if (questions[myIndex].correctAnswer === "a") {
         document.getElementById("correctAnswer").textContent = "Correct";
         score++;
         myIndex++
         displayQuestion(myIndex)
-
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
@@ -214,10 +200,8 @@ document.getElementById("button1").onclick = function () {
         myIndex++
         displayQuestion(myIndex)
     }
-
-
-
 }
+
 document.getElementById("button2").onclick = function () {
     if (myIndex === 15) {
         document.getElementById("questionSelection").style.display = "none";
@@ -225,14 +209,17 @@ document.getElementById("button2").onclick = function () {
     else if (questions[myIndex].correctAnswer === "b") {
         document.getElementById("correctAnswer").textContent = "Correct";
         score++;
+        myIndex++
+        displayQuestion(myIndex)
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
         secondsLeft -= 5;
+        myIndex++
+        displayQuestion(myIndex)
     }
-    myIndex++
-    displayQuestion(myIndex)
 }
+
 document.getElementById("button3").onclick = function () {
     if (myIndex === 15) {
         document.getElementById("questionSelection").style.display = "none";
@@ -240,14 +227,17 @@ document.getElementById("button3").onclick = function () {
     else if (questions[myIndex].correctAnswer === "c") {
         document.getElementById("correctAnswer").textContent = "Correct";
         score++;
+        myIndex++
+        displayQuestion(myIndex)
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
         secondsLeft -= 5;
+        myIndex++
+        displayQuestion(myIndex)
     }
-    myIndex++
-    displayQuestion(myIndex)
 }
+
 document.getElementById("button4").onclick = function () {
     if (myIndex === 15) {
         document.getElementById("questionSelection").style.display = "none";
@@ -255,13 +245,15 @@ document.getElementById("button4").onclick = function () {
     else if (questions[myIndex].correctAnswer === "d") {
         document.getElementById("correctAnswer").textContent = "Correct";
         score++;
+        myIndex++
+        displayQuestion(myIndex)
     }
     else {
         document.getElementById("correctAnswer").textContent = "Wrong";
         secondsLeft -= 5;
+        myIndex++
+        displayQuestion(myIndex)
     }
-    myIndex++
-    displayQuestion(myIndex)
 }
 
 function timeUp() {
@@ -269,7 +261,6 @@ function timeUp() {
         document.getElementById("questionSelection").style.display = "none";
     }
 }
-
 function hideResults() {
     document.getElementById("results").style.display = "none";
     document.getElementById("highscores").style.display = "block";
@@ -277,22 +268,15 @@ function hideResults() {
 function hideStartPage() {
     document.getElementById("startPage").style.display = "none";
 }
-
 function showQuestionSelection() {
+    document.getElementById("questionSelection").style.display = "block"
 
-    if (document.getElementById("questionSelection").style.display = "block") {
-    }
 }
 
-
-
 submitInitials.addEventListener("click", function () {
-
     var initials = storeInitials.value
-
     if (storeInitials.value.length == "" || storeInitials.value.length > 3) {
         alert("Please enter your initials \nLength limit: 1 to 3 characters");
-
     }
     else {
         onclick = "hideResults()"
@@ -311,10 +295,8 @@ submitInitials.addEventListener("click", function () {
             initialsSpan.append(writeInitials);
             highscoresSpan.append(writeScore);
         }
-
     }
 })
-
 
 document.getElementById("clear").onclick = function () {
     localStorage.clear();

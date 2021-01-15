@@ -43,7 +43,7 @@
   color: white;
 }
 
-.start:hover {
+.start:hover{
   background-color:rgb(202, 178, 223); 
   color: white;
 }
@@ -52,16 +52,15 @@
   background-color:rgb(158, 201, 202);
 }
 
-#initialsSpan { 
-
-left:0;
+#initialsSpan{ 
+  left:0;
   padding: 60%;
   font-size: x-large;
   color: black;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#highscoresSpan {
+#highscoresSpan{
   right:0;
   padding: 60%;
   font-size: x-large;
@@ -80,7 +79,7 @@ left:0;
   transition-duration: 0.4s;
 }
 
-#retake {
+#retake{
   position: fixed;
   top: 90%;
   left: 5%;
